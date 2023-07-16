@@ -3,20 +3,14 @@ server:
   port: 3000
 spring:
   datasource:
-    url: jdbc:postgresql://postgresbook:5432/postgres
-    username: postgres
-    password: postgres123
+    url: jdbc:sqlserver://atufa.database.windows.net:1433;database=atufa;user=atufa@atufa;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: atufa
+    password: !stCutd@ne12
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create-drop
-  sql:
-    init:
-      platform: postgresql
-      mode: always
-    output:
-      ansi:
-        enabled: always
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
 logging:
   level:
     org:
